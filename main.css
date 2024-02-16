@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+ }
+ 
+ 
+ header{
+    background-color: blueviolet;
+    padding: 16px 0;
+    color: #fff;
+    display: flex; /*deixando botão ao lado do título */
+    border-bottom: solid 16px #360065;
+    justify-content: center; /*centralizando os elementos do header*/
+ }
+ 
+ 
+ header button{
+    margin-left: 16px;
+    text-transform: uppercase; /*deixando as letras em maiúsculo*/
+    font-style: italic;
+ }
+ 
+ 
+ form{
+    background-color: rgb(196, 196, 196);
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+ }
+ 
+ 
+ form h2{
+    margin-bottom: 16px ;
+ }
+ 
+ 
+ input, button{
+    padding: 8px;
+ }
+ 
+ 
+ button{
+    background-color: #009432;
+    border: none;
+    cursor: pointer; /* alterar cursos para mão no botão */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+ }
+ 
+ 
+ #botao-cancelar{
+    background-color: red;
+ }
+ 
+ul{
+    display: flex; /*colocar elementos um ao lado do outro*/
+    flex-wrap: wrap; /*chegando ao limite da página, quebre a linha*/
+}
+
+ul li{
+    max-width: 25%;
+    list-style: none; /*removendo bolinhas da lista LI*/
+    position: relative; /*para que o link fique dentro da imagem*/
+    max-height: 280px; /* a imagem ficará maior que o li*/
+    /* Poderiamos usar no img height 100%, porém iria distorcer a iamgem
+    para não distorcer a imagem, a gente precisa cortar o que passar do tamanho do li
+    para isso usarmos o overflow-y para cortar no eixo y o que passar*/
+    overflow-y: hidden;
+}
+
+ul li img{
+    width: 100%; /*para dizer que a imagem ocupará 100% do tamanho do li*/
+}
+
+.overlay-imagem-link{ /*link para ver imagem maior*/
+    padding: 16px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute; /*posicionar no canto direito do LI*/
+    bottom: 0; /*alinhando ao fundo a imagem*/
+    left: 0; /*alinhando a esquerda da imagem*/
+    width: 100%; /*preenhcer toda a largura disponível */
+    opacity: 0;
+    transition: all ease .5s; /*transição da opacidade em 0.5seg*/
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*hover - quando o mouse passar por cima do elemento*/
+ul li:hover .overlay-imagem-link{
+    opacity: 1;
+}
